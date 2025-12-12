@@ -5,6 +5,7 @@
 ├── docs/               # 设计文档与架构图 (Draw.io/PDF)
 ├── models/             # Simulink 模型 (.slx) 及配套脚本 (.m, .mat, .capr)
 ├── pics/               # 相关结果
+├── slides/             # 定期汇报归档
 └── README.md           # 项目说明
 ```
 
