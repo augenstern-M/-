@@ -1,4 +1,4 @@
-## 目录结构 (Directory Structure)
+## 目录结构
 
 Plaintext
 
@@ -21,26 +21,26 @@ Plaintext
 
 ## 功能开发清单
 
-### 驱动控制 (Longitudinal Control)
-- [ ] **预见性巡航控制 (Predictive Cruise)**
+### 驱动控制 
+- [ ] **预见性巡航控制**
     - [ ] 坡度/阻力估算 
     - [ ] 预见性目标加速度计算 (PID + 规则)
-- [ ] **双桥驱动分配 (Dual-Bridge Torque Allocation)**
+- [ ] **双桥驱动分配 **
     - [ ] 动态轴荷计算
     - [ ] 基于效率MAP的转矩分配 
-- [ ] **单双桥切换策略 (Bridge Switching)**
-    - [ ] 驾驶意图与工况识别 [cite: 79, 100]
+- [ ] **单双桥切换策略**
+    - [ ] 驾驶意图与工况识别 
     - [ ] 滞回策略防止频繁切换
     - [ ] 
-### 制动控制 (Braking Control)
-- [ ] **制动力分配 (Braking Distribution)**
+### 制动控制
+- [ ] **制动力分配**
     - [ ] 的前后轴力矩分配
     - [ ] ECE制动法规线校核 
-- [ ] **主挂解耦 (Trailer Decoupling)**
+- [ ] **主挂解耦**
     - [ ] 挂车制动力转移计算 
     - [ ] 牵引车电机制动回馈优化
 
-### 横向稳定性 (Lateral Stability)
+### 横向稳定性
 - [ ] **驱制动协同控制**
     - [ ] 上层：横摆角速度PID控制器
     - [ ] 下层：电机与EBS协同转矩分配
