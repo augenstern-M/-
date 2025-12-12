@@ -6,27 +6,20 @@ Plaintext
 .
 ├── docs/               # 设计文档与架构图 (Draw.io/PDF)
 ├── models/             # Simulink 模型 (.slx) 及配套脚本 (.m, .mat, .capr)
-├── tests/              # 测试用例与仿真数据
+├── pics/               # 相关结果
 └── README.md           # 项目说明
 ```
 
-## 系统架构 (System Architecture)
-
-> 请参考 `docs/architecture/` 目录下的详细设计图。
 
 ### 1. 核心功能交互流程
-*(在此处插入之前绘制的流程图图片，建议命名为 vcu_flow.png)*
-![功能交互流程](./docs/images/vcu_flow.png)
+![功能交互流程](./pics/VCU功能模块流程.png)
 
 ### 2. 模块输入输出定义
-*(在此处插入架构参考图，建议命名为 vcu_architecture.png)*
-![架构输入输出](./docs/images/vcu_architecture.png)
+![架构输入输出](./pics/VCU功能模块交互.png)
 
 ---
 
 ## 功能开发清单
-
-根据《二期功能开发进展》，请认领以下模块并提交代码/文档：
 
 ### 驱动控制 (Longitudinal Control)
 - [ ] **预见性巡航控制 (Predictive Cruise)**
