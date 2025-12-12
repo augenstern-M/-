@@ -1,7 +1,5 @@
 ## 目录结构
 
-Plaintext
-
 ```
 .
 ├── docs/               # 设计文档与架构图 (Draw.io/PDF)
