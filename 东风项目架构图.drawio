@@ -1,0 +1,437 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7" pages="2">
+  <diagram name="图1: VCU功能模块交互流程" id="DatSslT6yr6pHy5h1HIx">
+    <mxGraphModel dx="2752" dy="1331" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SxW25SHohwKW_qWsDL61-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="开始：周期性任务触发" vertex="1">
+          <mxGeometry height="40" width="160" x="350" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f5f5f5;strokeColor=#666666;" value="输入信号采集&#xa;(车速, 坡度, 踏板, 雷达, EBS状态)" vertex="1">
+          <mxGeometry height="50" width="200" x="330" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="驾驶意图与工况识别&lt;br&gt;( 预见性决策 /&amp;nbsp; 意图解析)" vertex="1">
+          <mxGeometry height="50" width="180" x="340" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="判断：驱动 vs 制动?" vertex="1">
+          <mxGeometry height="80" width="140" x="360" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-5" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="预见性巡航/跟车模式?" vertex="1">
+          <mxGeometry height="80" width="140" x="170" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;预见性目标加速度计算&lt;br&gt;(PID + 前馈Boost)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="140" x="70" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="踏板解析扭矩计算" vertex="1">
+          <mxGeometry height="50" width="120" x="250" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" value="单双桥切换策略&lt;br&gt;（效率vs动力)" vertex="1">
+          <mxGeometry height="50" width="140" x="170" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;双桥驱动力矩分配&lt;br&gt;（动态轴荷+MAP)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="140" x="170" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;前后轴制动力分配&lt;br&gt;(规则控制+ECE线)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="550" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;主挂解耦制动策略&lt;br&gt;(挂车力转移)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="550" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="气压/电制动协调&#xa;(补偿气压响应滞后)" vertex="1">
+          <mxGeometry height="50" width="160" x="550" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="横向稳定性校验&lt;br&gt;(横摆角速度PID)" vertex="1">
+          <mxGeometry height="60" width="180" x="340" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-14" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="需要稳定性介入?" vertex="1">
+          <mxGeometry height="80" width="140" x="360" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="驱制动协调转矩分配&#xa;(电机+EBS差动制动)" vertex="1">
+          <mxGeometry height="50" width="160" x="550" y="1015" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="输出：电机力矩指令 / EBS压力指令" vertex="1">
+          <mxGeometry height="50" width="200" x="330" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-17" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-1" target="SxW25SHohwKW_qWsDL61-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-18" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-2" target="SxW25SHohwKW_qWsDL61-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-19" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-3" target="SxW25SHohwKW_qWsDL61-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-20" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="SxW25SHohwKW_qWsDL61-5" value="驱动工况">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-21" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-5" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="SxW25SHohwKW_qWsDL61-6" value="是">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-22" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-5" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="SxW25SHohwKW_qWsDL61-7" value="否">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-23" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-6" target="SxW25SHohwKW_qWsDL61-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="720" />
+              <mxPoint x="240" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-24" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-7" target="SxW25SHohwKW_qWsDL61-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="720" />
+              <mxPoint x="240" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-25" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-8" target="SxW25SHohwKW_qWsDL61-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-26" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-9" target="SxW25SHohwKW_qWsDL61-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="890" />
+              <mxPoint x="430" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-27" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="SxW25SHohwKW_qWsDL61-10" value="制动工况">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-28" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-10" target="SxW25SHohwKW_qWsDL61-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-29" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-11" target="SxW25SHohwKW_qWsDL61-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-30" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-12" target="SxW25SHohwKW_qWsDL61-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="890" />
+              <mxPoint x="430" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-31" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-13" target="SxW25SHohwKW_qWsDL61-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-32" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-14" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="SxW25SHohwKW_qWsDL61-16" value="否">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-33" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-14" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="SxW25SHohwKW_qWsDL61-15" value="是">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-34" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-15" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="SxW25SHohwKW_qWsDL61-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="1155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-89" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="600" width="1000" x="-20" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-90" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8faadc;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="60" width="1000" x="-20" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-91" edge="1" parent="1" style="endArrow=none;html=1;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="120" y="1830" as="sourcePoint" />
+            <mxPoint x="120" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-92" edge="1" parent="1" style="endArrow=none;html=1;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="800" y="1830" as="sourcePoint" />
+            <mxPoint x="800" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-93" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=16;fontStyle=1" value="整车输入信号" vertex="1">
+          <mxGeometry height="60" width="140" x="-20" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-94" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=16;fontStyle=1" value="控制策略交互流程 (纵向/横向)" vertex="1">
+          <mxGeometry height="60" width="680" x="120" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-95" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=16;fontStyle=1" value="输出控制指令" vertex="1">
+          <mxGeometry height="60" width="140" x="800" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-96" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="驱动踏板/油门" vertex="1">
+          <mxGeometry height="30" width="100" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-97" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="制动踏板位置" vertex="1">
+          <mxGeometry height="30" width="100" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-98" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="车速/轮速信号" vertex="1">
+          <mxGeometry height="30" width="100" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-99" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="坡度/前方路况" vertex="1">
+          <mxGeometry height="30" width="100" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-100" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="驾驶模式/档位" vertex="1">
+          <mxGeometry height="30" width="100" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-101" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="方向盘转角" vertex="1">
+          <mxGeometry height="30" width="100" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-102" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="横摆角速度" vertex="1">
+          <mxGeometry height="30" width="100" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-105" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0b0b0;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="340" width="640" x="140" y="1300" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-106" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1" value="纵向：驱动与制动分配&amp;nbsp;" vertex="1">
+          <mxGeometry height="20" width="300" x="150" y="1305" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-107" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="预见性工况决策&#xa;(PID+坡度前馈)" vertex="1">
+          <mxGeometry height="60" width="120" x="170" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="动态轴荷/质量估算" vertex="1">
+          <mxGeometry height="50" width="120" x="340" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="单双桥切换策略&#xa;(效率MAP vs 动力)" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="双桥驱动力矩分配" vertex="1">
+          <mxGeometry height="50" width="130" x="590" y="1390" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="制动分配&lt;br&gt;(ECE法规线)" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="1505" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-112" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="主挂解耦制动" vertex="1">
+          <mxGeometry height="50" width="120" x="170" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-113" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="电/气制动协同分配" vertex="1">
+          <mxGeometry height="50" width="130" x="590" y="1510" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-114" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0b0b0;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="140" width="640" x="140" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-115" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;fontStyle=1" value="横向：稳定性协同控制" vertex="1">
+          <mxGeometry height="20" width="300" x="150" y="1675" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-116" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="期望横摆角速度计算" vertex="1">
+          <mxGeometry height="50" width="140" x="170" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-117" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="横摆角速度PID控制器" vertex="1">
+          <mxGeometry height="50" width="140" x="380" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-118" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="驱制动协同转矩分配&#xa;(下层分配)" vertex="1">
+          <mxGeometry height="60" width="140" x="585" y="1705" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="电机目标扭矩" vertex="1">
+          <mxGeometry height="40" width="120" x="820" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-121" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="纵向加速度" vertex="1">
+          <mxGeometry height="40" width="100" x="830" y="1334" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-122" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="牵引车EBS气压指令" vertex="1">
+          <mxGeometry height="40" width="120" x="820" y="1515" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-123" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="挂车EBS制动压力" vertex="1">
+          <mxGeometry height="40" width="120" x="820" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-125" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-96" target="SxW25SHohwKW_qWsDL61-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-126" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-99" style="entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="SxW25SHohwKW_qWsDL61-107">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-127" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-98" target="SxW25SHohwKW_qWsDL61-108">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="1435" />
+              <mxPoint x="310" y="1430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-128" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-100" target="SxW25SHohwKW_qWsDL61-109">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-130" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-101" target="SxW25SHohwKW_qWsDL61-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-131" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-102" style="entryX=0.455;entryY=0.973;entryDx=0;entryDy=0;entryPerimeter=0;" target="SxW25SHohwKW_qWsDL61-117">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="1790" />
+              <mxPoint x="444" y="1790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-133" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-107" target="SxW25SHohwKW_qWsDL61-108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-134" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-108" target="SxW25SHohwKW_qWsDL61-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-135" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-109" target="SxW25SHohwKW_qWsDL61-110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-136" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-112" target="SxW25SHohwKW_qWsDL61-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-137" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-111" target="SxW25SHohwKW_qWsDL61-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-138" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-116" target="SxW25SHohwKW_qWsDL61-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-139" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-117" target="SxW25SHohwKW_qWsDL61-118">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-141" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-110" target="SxW25SHohwKW_qWsDL61-120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-142" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-110" target="SxW25SHohwKW_qWsDL61-121">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="1405" />
+              <mxPoint x="780" y="1370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-143" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-113" target="SxW25SHohwKW_qWsDL61-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-144" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-112" target="SxW25SHohwKW_qWsDL61-123">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="1610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-146" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-118" target="SxW25SHohwKW_qWsDL61-120">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="1735" />
+              <mxPoint x="760" y="1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-150" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-97" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="SxW25SHohwKW_qWsDL61-112" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="1600" as="sourcePoint" />
+            <mxPoint x="170" y="1540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SxW25SHohwKW_qWsDL61-154" edge="1" parent="1" source="SxW25SHohwKW_qWsDL61-113" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="SxW25SHohwKW_qWsDL61-120" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="1600" as="sourcePoint" />
+            <mxPoint x="470" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="图2: 功能流程架构图" id="kcGsU6N82AfMCB70pdw4">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="root2" />
+        <mxCell id="layer2" parent="root2" />
+        <mxCell id="bg_input" value="传感器与输入层" style="swimlane;horizontal=0;startSize=20;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="layer2">
+          <mxGeometry x="40" y="80" width="160" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="in_driver" value="驾驶员操作&#xa;(油门/制动/转向)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_input">
+          <mxGeometry x="25" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="in_sensor" value="车辆状态&#xa;(车速/轮速/横摆)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_input">
+          <mxGeometry x="25" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="in_env" value="环境感知&#xa;(坡度/前车距离)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_input">
+          <mxGeometry x="25" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="in_feed" value="反馈信号&#xa;(电机/EBS/SOC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_input">
+          <mxGeometry x="25" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_core" value="VCU应用层功能架构" style="swimlane;startSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="layer2">
+          <mxGeometry x="240" y="80" width="680" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="param_est" value="状态参数辨识" style="swimlane;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="bg_core">
+          <mxGeometry x="20" y="40" width="180" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="est_mass" value="动态轴荷/质量估算&#xa;(PDF P2, P6)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="param_est">
+          <mxGeometry x="20" y="40" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="est_slope" value="坡度/阻力估算&#xa;(PDF P1)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="param_est">
+          <mxGeometry x="20" y="120" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="est_mu" value="路面附着系数估算&#xa;(PDF P3)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="param_est">
+          <mxGeometry x="20" y="200" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="est_gap" value="转向间隙/横摆响应&#xa;(PDF P5)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="param_est">
+          <mxGeometry x="20" y="280" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_model" value="多自由度动力学控制模型" style="swimlane;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="bg_core">
+          <mxGeometry x="240" y="40" width="420" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_predict" value="预见性巡航决策(P1)&#xa;PID + 规则算法" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;fontStyle=1" vertex="1" parent="ctrl_model">
+          <mxGeometry x="30" y="40" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_mode" value="单双桥模式决策(P3)&#xa;安全/经济/动力判别" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;fontStyle=1" vertex="1" parent="ctrl_model">
+          <mxGeometry x="30" y="110" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_drive" value="双桥驱动力矩分配(P2)&#xa;MAP效率寻优" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="ctrl_model">
+          <mxGeometry x="230" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_brake" value="制动力矩分配(P4, P6)&#xa;滑模控制 + 主挂解耦" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="ctrl_model">
+          <mxGeometry x="230" y="130" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl_stab" value="驱制动协调稳定性(P5)&#xa;横摆角速度PID" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="ctrl_model">
+          <mxGeometry x="30" y="250" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_int1" edge="1" parent="bg_core" source="param_est" target="ctrl_model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_int2" edge="1" parent="ctrl_model" source="ctrl_predict" target="ctrl_drive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_int3" edge="1" parent="ctrl_model" source="ctrl_mode" target="ctrl_drive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_int4" edge="1" parent="ctrl_model" source="ctrl_drive" target="ctrl_stab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_int5" edge="1" parent="ctrl_model" source="ctrl_brake" target="ctrl_stab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_output" value="输出指令值" style="swimlane;horizontal=0;startSize=20;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="layer2">
+          <mxGeometry x="960" y="80" width="160" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="out_motor" value="前后电机&#xa;目标扭矩" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_output">
+          <mxGeometry x="25" y="100" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="out_ebs" value="EBS/ABS&#xa;压力指令" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_output">
+          <mxGeometry x="25" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="out_trailer" value="挂车&#xa;制动指令" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="bg_output">
+          <mxGeometry x="25" y="340" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="link_in" edge="1" parent="layer2" source="bg_input" target="param_est">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_out1" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="layer2" source="ctrl_stab" target="out_motor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_out2" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="layer2" source="ctrl_stab" target="out_ebs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
